@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>My Heart's Message 💌</title>
+  <link href="https://fonts.googleapis.com/css2?family=Short+Stack&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Short Stack', cursive;
+      background-color: #fffff7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .phone-frame {
+      width: 100%;
+      max-width: 400px;
+      min-height: 100vh;
+      padding: 20px;
+      position: relative;
+    }
+
+    .story-container {
+      position: relative;
+      width: 100%;
+      min-height: 80vh;
+      margin: 0 auto;
+    }
+
+    .story-page {
+      background: #fcf9fb;
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      min-height: 60vh;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      transform: translateX(110%);
+      opacity: 0;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 3px solid #ded4c3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .story-page.active {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .page-header {
+      font-size: 1.8rem;
+      color: #d08b9c;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 0px #fff;
+      width: 100%;
+      padding: 0 15px;
+    }
+
+    .page-content {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #6b4d57;
+      width: 100%;
+      padding: 0 15px;
+      margin: auto 0;
+    }
+
+    .loading-bar {
+      width: 90%;
+      height: 12px;
+      background: #f5e8e3;
+      border-radius: 10px;
+      margin: 25px auto;
+      position: relative;
+      overflow: visible;
+    }
+
+    .loading-progress {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, #d08b9c, #ffb7c5);
+      transition: width 0.5s ease;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .loading-heart {
+      position: absolute;
+      right: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+      animation: heartbeat 1.2s infinite;
+    }
+
+    .loading-heart img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+
+    .nav-buttons {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 400px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .nav-btn {
+      background: #d08b9c;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 25px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 10px rgba(208, 139, 156, 0.3);
+    }
+
+    .nav-btn:active {
+      transform: scale(0.95);
+    }
+
+    @keyframes heartbeat {
+      0% { transform: translateY(-50%) scale(1); }
+      50% { transform: translateY(-50%) scale(1.3); }
+      100% { transform: translateY(-50%) scale(1); }
+    }
+
+    .highlight {
+      color: #d08b9c;
+      font-weight: bold;
+    }
+
+    .memory-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 20px;
+      margin: 15px auto;
+      background-size: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      background-position: center;
+    }
+
+    .heart-float {
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 99;
+      display: none;
+      animation: fadeUp 3s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translate(-50%, 50px); }
+      50% { opacity: 1; transform: translate(-50%, 0); }
+      100% { opacity: 0; transform: translate(-50%, -100px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="phone-frame">
+    <div class="story-container">
+
+      <!-- PAGE 1 -->
+      <div class="story-page active" id="page1">
+        <h2 class="page-header">Dear yon</h2>
+        <div class="page-content">
+          <i class="fas fa-star" style="color: #d08b9c; font-size: 2rem;"></i>
+          <p>asssssssssssssssssssssssssssssssssssdasdasdasdasdasdaposkdopaskdpaksd;akd;alkda;'lsdkasl;'dka;lsdkl;askd;lkasd;kakd;alskdl;askd;laks;dlk;aksldka;slkdkad</p>
+          <div class="memory-photo" style="background-image: url('https://media1.tenor.com/m/BCTaZCiXifQAAAAC/toast-usagi.gif')"></div>
+        </div>
+      </div>
+
+      <!-- PAGE 2 -->
+      <div class="story-page" id="page2">
+        <h2 class="page-header">Dear Kyon</h2>
+        <div class="page-content">
+          <p>asdasdoijijwdl;kasjm;dkla;sldk;alskd;aksd;lka;slkd;laksaockapsokca;lskc;alsk;lakscl;ka</p>
+          <div class="memory-photo" style="background-image: url('https://media1.tenor.com/m/Y2pyL37WOr8AAAAC/usagi-dance.gif')"></div>
+          <p>..<3...</p>
+        </div>
+      </div>
+
+      <!-- PAGE 3 -->
+      <div class="story-page" id="page3">
+        <h2 class="page-header"> Dear Kyon </h2>
+        <div class="page-content">
+          <p>asdaosdjlaksjdm;alksdj;asdk;alskd;alskdl;aksdl;kas;ldk;aks;dkl;aksdk;laksd;lkaodkap;oksd;alskd;laks;dlka;lskdkasl;dka;lsdkad</p>
+          <p> asdpokaspdokaspdokapso'dka;sldka;sldk;alskd <span class="highlight">(tyt)</span> </p>
+          <div class="memory-photo" style="background-image: url('https://media1.tenor.com/m/9Fi8d9L09UMAAAAC/exciting-usagi.gif')"></div>
+        </div>
+      </div>
+
+      <!-- PAGE 4 -->
+      <div class="story-page" id="page4">
+        <h2 class="page-header">Dear Kyon</h2>
+        <div class="page-content">
+          <p> asdasdoijkopaijsdpla;isdj;alskdja;sldk;laskdl;ka;lskdk;alsklkas;dlk;alskdl;kasd</p>
+          <ul style="text-align: left; margin: 15px;">
+            <p> My fav things i like about u <3 </p>
+            <li>yasdasdasdasdasd</li>
+            <li>yasdasdaaaasdwwwwa</li>
+            <li>yasdaspodjkaoslidjakl;sidjhalskjdlaksjdl</li>
+          </ul>
+          <p><span class="highlight"> <3 </span></p>
+        </div>
+      </div>
+
+      <!-- PAGE 5 -->
+      <div class="story-page" id="page5">
+        <h2 class="page-header">Dear Kyon</h2>
+        <div class="page-content">
+          <p style="margin: 20px 0;">asdiapskjdolasiojkkkkkkkkkkkkkkkkkhkkkaiwudhailsudhaklsjhdkjashdkjhsdlhjakldhjklajsdhalkjsdhkjahsdjkasdhklajsd</p>
+          <div class="highlight" style="font-size: 1.4rem;">I LIKE YOU!</div>
+          <pstyle="margin-top: 15px;>(asdasdasdawdadasdasd <3)</p>
+          <p style="margin-top: 15px;">Tevel</p>
+        </div>
+      </div>
+
+      <!-- LOADING BAR -->
+      <div class="loading-bar">
+        <div class="loading-progress">
+          <div class="loading-heart">
+            <img src="https://media.tenor.com/XYoEAsaUQ9oAAAAj/rb.gif" alt="beating heart">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HEART FLOAT (TENOR GIF) -->
+    <div class="heart-float" id="heartFloat">
+      <img src="https://media.tenor.com/8hHHxvAr1LIAAAAi/chiikawa-usagi.gif" width="120" alt="Floating hearts">
+    </div>
+
+    <!-- NAVIGATION BUTTONS -->
+    <div class="nav-buttons">
+      <button class="nav-btn" id="prevBtn"><i class="fas fa-arrow-left"></i> Back</button>
+      <button class="nav-btn" id="nextBtn">Next <i class="fas fa-arrow-right"></i></button>
+    </div>
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    let currentPage = 1;
+    const totalPages = 5;
+    const pages = document.querySelectorAll('.story-page');
+    const heartFloat = document.getElementById('heartFloat');
+
+    function updateProgress() {
+      const progress = ((currentPage - 1) / (totalPages - 1)) * 100;
+      document.querySelector('.loading-progress').style.width = `${progress}%`;
+
+      // Show floating hearts if it's the last page
+      if (currentPage === totalPages) {
+        heartFloat.style.display = 'block';
+        setTimeout(() => {
+          heartFloat.style.display = 'none';
+        }, 3000); // Remove after animation
+      }
+    }
+
+    function showPage(pageNumber) {
+      pages.forEach(page => page.classList.remove('active'));
+      document.getElementById(`page${pageNumber}`).classList.add('active');
+      updateProgress();
+    }
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      if (currentPage < totalPages) {
+        currentPage++;
+        showPage(currentPage);
+      }
+    });
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      if (currentPage > 1) {
+        currentPage--;
+        showPage(currentPage);
+      }
+    });
+
+    updateProgress();
+  </script>
+</body>
+</html>
